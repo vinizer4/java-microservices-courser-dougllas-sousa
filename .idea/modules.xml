@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/java-microservices-courser-dougllas-sousa.iml" filepath="$PROJECT_DIR$/.idea/java-microservices-courser-dougllas-sousa.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/msclientes.main.iml" filepath="$PROJECT_DIR$/.idea/modules/msclientes.main.iml" />
     </modules>
   </component>
 </project>
