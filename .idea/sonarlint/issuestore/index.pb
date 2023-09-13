@@ -11,8 +11,6 @@ E
 eurekaserver/mvnw.cmd,1/0/10f641fc612b0dcb11295982d6dca492e5da3313
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-†
-Veurekaserver/src/main/java/io/github/cursods/eurekaserver/EurekaserverApplication.java,8/f/8fba5aa1f19d5b305cff25296a7fc9471eaf620e
 B
 msclientes/HELP.md,d/c/dc2b927cfd3be075226cf26fcb6b3d5f63095ddf
 D
