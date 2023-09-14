@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: mscloudgateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+server:
+  port: 8080
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+logging:
+  level:
+    root: INFO
+    org.springframework.web: INFO
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.cloud.gateway.route: DEBUG
+    org.springframework.cloud.gateway.handler: DEBUG
+    org.springframework.cloud.gateway.filter: DEBUG
+    org.springframework.cloud.gateway.config: DEBUG
+    org.springframework.cloud.gateway.support: DEBUG
+    org.springframework.cloud.gateway.support.ServerWebExchangeUtils: TRACE
+    org.springframework.cloud.gateway.filter.NettyRoutingFilter: TRACE
+    org.springframework.cloud.gateway.filter.NettyWriteResponseFilter: TRACE
+    org.springframework.cloud.gateway.filter.RouteToRequestUrlFilter: TRACE
+    org.springframework.cloud.gateway.filter.ForwardRoutingFilter: TRACE
+    org.springframework.cloud.netflix.eureka: DEBUG

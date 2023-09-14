@@ -5,11 +5,11 @@ import lombok.Data;
 
 @Data
 public class ClienteSaveRequest {
-    private String nome;
     private String cpf;
-    private String idade;
+    private String nome;
+    private Integer idade;
 
-    public Cliente toModel() {
-        return new Cliente(nome, cpf, idade);
+    public Cliente toModel(){
+        return new Cliente(cpf, nome, idade);
     }
 }

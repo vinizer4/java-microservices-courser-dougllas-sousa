@@ -1,8 +1,9 @@
 package io.github.cursodsousa.msclientes.domain;
 
-import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
 
 @Entity
 @Data
@@ -12,19 +13,16 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column
-    private String nome;
-
     @Column
     private String cpf;
-
     @Column
-    private String idade;
+    private String nome;
+    @Column
+    private Integer idade;
 
-    public Cliente(String nome, String cpf, String idade) {
-        this.nome = nome;
+    public Cliente(String cpf, String nome, Integer idade) {
         this.cpf = cpf;
+        this.nome = nome;
         this.idade = idade;
     }
 }
