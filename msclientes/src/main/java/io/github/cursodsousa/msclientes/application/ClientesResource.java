@@ -23,7 +23,7 @@ public class ClientesResource {
     @GetMapping
     public String status(){
         log.info("Obtendo o status do microservice de clientes");
-        return "ok";
+        return "API Clientes funcionando!";
     }
 
     @PostMapping
