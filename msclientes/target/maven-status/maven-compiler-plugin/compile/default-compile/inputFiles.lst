@@ -1,6 +1,6 @@
-G:\dev\projetos\curso micro services\projeto-cursoms\msclientes\src\main\java\io\github\cursodsousa\msclientes\domain\Cliente.java
-G:\dev\projetos\curso micro services\projeto-cursoms\msclientes\src\main\java\io\github\cursodsousa\msclientes\infra\repository\ClienteRepository.java
-G:\dev\projetos\curso micro services\projeto-cursoms\msclientes\src\main\java\io\github\cursodsousa\msclientes\application\representation\ClienteSaveRequest.java
-G:\dev\projetos\curso micro services\projeto-cursoms\msclientes\src\main\java\io\github\cursodsousa\msclientes\MsclientesApplication.java
-G:\dev\projetos\curso micro services\projeto-cursoms\msclientes\src\main\java\io\github\cursodsousa\msclientes\application\ClienteService.java
-G:\dev\projetos\curso micro services\projeto-cursoms\msclientes\src\main\java\io\github\cursodsousa\msclientes\application\ClientesResource.java
+/Users/vinicius.saraiva/Projects/java-microservices-courser-dougllas-sousa/msclientes/src/main/java/io/github/cursodsousa/msclientes/application/representation/ClienteSaveRequest.java
+/Users/vinicius.saraiva/Projects/java-microservices-courser-dougllas-sousa/msclientes/src/main/java/io/github/cursodsousa/msclientes/MsclientesApplication.java
+/Users/vinicius.saraiva/Projects/java-microservices-courser-dougllas-sousa/msclientes/src/main/java/io/github/cursodsousa/msclientes/application/ClientesResource.java
+/Users/vinicius.saraiva/Projects/java-microservices-courser-dougllas-sousa/msclientes/src/main/java/io/github/cursodsousa/msclientes/infra/repository/ClienteRepository.java
+/Users/vinicius.saraiva/Projects/java-microservices-courser-dougllas-sousa/msclientes/src/main/java/io/github/cursodsousa/msclientes/application/ClienteService.java
+/Users/vinicius.saraiva/Projects/java-microservices-courser-dougllas-sousa/msclientes/src/main/java/io/github/cursodsousa/msclientes/domain/Cliente.java
