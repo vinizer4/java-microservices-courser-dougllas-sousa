@@ -29,8 +29,7 @@ public class MsCloudGatewayApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws InterruptedException {
-		Thread.sleep(70000);
-		// Lista todos os serviços registrados
+		Thread.sleep(30000);
 		List<String> services = discoveryClient.getServices();
 
 		for (String service : services) {
@@ -49,6 +48,7 @@ public class MsCloudGatewayApplication implements CommandLineRunner {
 				.routes()
 				.route( r -> r.path("/clientes/**").uri("lb://msclientes") )
 				.route( r -> r.path("/cartoes/**").uri("lb://mscartoes") )
+				.route( r -> r.path("/avaliacoes-credito/**").uri("lb://msavaliadorcredito") )
 				.build();
 	}
 }
