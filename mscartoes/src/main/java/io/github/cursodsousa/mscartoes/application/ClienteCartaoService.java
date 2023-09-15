@@ -11,7 +11,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class ClienteCartaoService {
 
-    private ClienteCartaoRepository clienteCartaoRepository;
+    private final ClienteCartaoRepository clienteCartaoRepository;
 
     public List<ClienteCartao> listCartoesByCpf(String cpf) {
         return clienteCartaoRepository.findByCpf(cpf);
