@@ -6,6 +6,7 @@ import io.github.cursodsousa.msavaliadorcredito.application.exception.ErroComuni
 import io.github.cursodsousa.msavaliadorcredito.domain.model.*;
 import io.github.cursodsousa.msavaliadorcredito.infra.clients.CartoesResourceClient;
 import io.github.cursodsousa.msavaliadorcredito.infra.clients.ClienteResourceClient;
+import io.github.cursodsousa.msavaliadorcredito.infra.queue.SolicitacaoEmissaoCartaoPublisher;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +22,7 @@ public class AvaliadorCreditoService {
 
     private final ClienteResourceClient clientesClient;
     private final CartoesResourceClient cartoesClient;
+    private final SolicitacaoEmissaoCartaoPublisher emissaoCartaoPublisher;
 
     public SituacaoCliente obterSituacaoCliente(String cpf) throws DadosClienteNotFoundException, ErroComunicacaoMicroservicesException {
         try {
@@ -79,4 +81,6 @@ public class AvaliadorCreditoService {
             throw new ErroComunicacaoMicroservicesException(e.getMessage(), status);
         }
     }
+
+
 }
