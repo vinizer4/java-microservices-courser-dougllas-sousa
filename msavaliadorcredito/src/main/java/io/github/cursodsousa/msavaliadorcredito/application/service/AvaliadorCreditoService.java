@@ -3,6 +3,7 @@ package io.github.cursodsousa.msavaliadorcredito.application.service;
 import feign.FeignException;
 import io.github.cursodsousa.msavaliadorcredito.application.exception.DadosClienteNotFoundException;
 import io.github.cursodsousa.msavaliadorcredito.application.exception.ErroComunicacaoMicroservicesException;
+import io.github.cursodsousa.msavaliadorcredito.application.exception.ErroSolicitacaoCartaoException;
 import io.github.cursodsousa.msavaliadorcredito.domain.model.*;
 import io.github.cursodsousa.msavaliadorcredito.infra.clients.CartoesResourceClient;
 import io.github.cursodsousa.msavaliadorcredito.infra.clients.ClienteResourceClient;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.util.List;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Service
@@ -82,5 +84,16 @@ public class AvaliadorCreditoService {
         }
     }
 
+    public ProtocoloSolicitacaoCartao solicitarEmissaoCartao(DadosSolicitacaoEmissaoCartao dados) {
+        try {
+            emissaoCartaoPublisher.solicitarCartao(dados);
 
+            var protocolo = UUID.randomUUID().toString();
+
+            return new ProtocoloSolicitacaoCartao(protocolo);
+
+        } catch (Exception e) {
+            throw new ErroSolicitacaoCartaoException(e.getMessage());
+        }
+    }
 }
