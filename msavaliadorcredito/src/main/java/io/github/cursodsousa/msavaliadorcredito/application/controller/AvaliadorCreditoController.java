@@ -36,11 +36,11 @@ public class AvaliadorCreditoController {
         }
     }
 
-    @PostMapping
+    @PostMapping(value = "realizar-avaliacao")
     public ResponseEntity realizarAvaliacao( @RequestBody DadosAvaliacao dados){
         try {
             RetornoAvaliacaoCliente retornoAvaliacaoCliente = avaliadorCreditoService
-                    .retornoAvaliacao(dados.getCpf(), dados.getRenda());
+                    .realizarAvaliacao(dados.getCpf(), dados.getRenda());
             return ResponseEntity.ok(retornoAvaliacaoCliente);
         } catch (DadosClienteNotFoundException e) {
             return  ResponseEntity.notFound().build();
