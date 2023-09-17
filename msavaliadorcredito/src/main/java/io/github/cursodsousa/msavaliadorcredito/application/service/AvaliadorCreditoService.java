@@ -26,25 +26,23 @@ public class AvaliadorCreditoService {
     private final CartoesResourceClient cartoesClient;
     private final SolicitacaoEmissaoCartaoPublisher emissaoCartaoPublisher;
 
-    public SituacaoCliente obterSituacaoCliente(String cpf) throws DadosClienteNotFoundException, ErroComunicacaoMicroservicesException {
+    public SituacaoCliente obterSituacaoCliente(String cpf)
+            throws DadosClienteNotFoundException, ErroComunicacaoMicroservicesException{
         try {
-
             ResponseEntity<DadosCliente> dadosClienteResponse = clientesClient.dadosCliente(cpf);
-
             ResponseEntity<List<CartaoCliente>> cartoesResponse = cartoesClient.getCartoesByCliente(cpf);
 
-            return SituacaoCliente.builder()
+            return SituacaoCliente
+                    .builder()
                     .dadosCliente(dadosClienteResponse.getBody())
                     .cartoes(cartoesResponse.getBody())
                     .build();
 
-        } catch (FeignException.FeignClientException e) {
+        }catch (FeignException.FeignClientException e){
             int status = e.status();
-
-            if (HttpStatus.NOT_FOUND.value() == status) {
+            if(HttpStatus.NOT_FOUND.value() == status){
                 throw new DadosClienteNotFoundException();
             }
-
             throw new ErroComunicacaoMicroservicesException(e.getMessage(), status);
         }
     }
@@ -84,15 +82,12 @@ public class AvaliadorCreditoService {
         }
     }
 
-    public ProtocoloSolicitacaoCartao solicitarEmissaoCartao(DadosSolicitacaoEmissaoCartao dados) {
-        try {
+    public ProtocoloSolicitacaoCartao solicitarEmissaoCartao(DadosSolicitacaoEmissaoCartao dados){
+        try{
             emissaoCartaoPublisher.solicitarCartao(dados);
-
             var protocolo = UUID.randomUUID().toString();
-
             return new ProtocoloSolicitacaoCartao(protocolo);
-
-        } catch (Exception e) {
+        }catch (Exception e){
             throw new ErroSolicitacaoCartaoException(e.getMessage());
         }
     }
