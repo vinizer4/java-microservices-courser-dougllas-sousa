@@ -1,6 +1,5 @@
 FROM maven:3.8.5-openjdk-17 as build
 WORKDIR /app
-COPY ../pom.xml ../pom.xml
 COPY . .
 RUN mvn clean package -DskipTests
 
@@ -8,8 +7,7 @@ FROM openjdk:17
 WORKDIR /app
 COPY --from=build ./app/target/*.jar ./app.jar
 
+ARG RABBITMQ_SERVER=rabbitmq-host
 ARG EUREKA_SERVER=localhost
-ARG KEYCLOAK_SERVER=localhost
-ARG KEYCLOAK_PORT=8081
 
-ENTRYPOINT java -jar app.jar
+ENTRYPOINT java -jar -Dspring.profiles.active=production app.jar
