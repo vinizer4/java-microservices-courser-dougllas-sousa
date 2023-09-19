@@ -19,9 +19,9 @@
     <modules>
         <module>eurekaserver</module>
         <module>mscloudgateway</module>
-        <module>msclientes</module>
-        <module>mscartoes</module>
         <module>msavaliadorcredito</module>
+        <module>mscartoes</module>
+        <module>msclientes</module>
     </modules>
 
     <properties>
